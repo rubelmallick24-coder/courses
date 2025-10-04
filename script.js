@@ -6,37 +6,31 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('nav-active');
 });
 
-// ===== Smooth Scroll for Navigation =====
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
-    if(navLinks.classList.contains('nav-active')) {
-      navLinks.classList.remove('nav-active');
-    }
+    navLinks.classList.remove('nav-active');
   });
 });
 
-// ===== Formspree Form Submission =====
+// ===== Formspree Submission =====
 const form = document.getElementById('contactForm');
-
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-
   const formData = new FormData(form);
 
   fetch(form.action, {
     method: 'POST',
     body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
     if (response.ok) {
-      alert('Thank you! We have received your details.');
+      alert('Thank you! We received your details.');
       form.reset();
     } else {
       alert('Oops! There was a problem submitting your form.');
@@ -61,29 +55,14 @@ function showSlide(index) {
   slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// Auto-slide every 5 seconds
-let autoSlide = setInterval(() => {
-  showSlide(currentIndex + 1);
-}, 5000);
+let autoSlide = setInterval(() => { showSlide(currentIndex + 1); }, 5000);
 
-// Navigation buttons
-prevBtn.addEventListener('click', () => {
-  showSlide(currentIndex - 1);
-  resetInterval();
-});
+prevBtn.addEventListener('click', () => { showSlide(currentIndex - 1); resetInterval(); });
+nextBtn.addEventListener('click', () => { showSlide(currentIndex + 1); resetInterval(); });
 
-nextBtn.addEventListener('click', () => {
-  showSlide(currentIndex + 1);
-  resetInterval();
-});
-
-// Reset auto-slide interval when user clicks
 function resetInterval() {
   clearInterval(autoSlide);
-  autoSlide = setInterval(() => {
-    showSlide(currentIndex + 1);
-  }, 5000);
+  autoSlide = setInterval(() => { showSlide(currentIndex + 1); }, 5000);
 }
 
-// Initialize slider
 showSlide(currentIndex);
