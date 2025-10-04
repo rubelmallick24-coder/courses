@@ -108,7 +108,7 @@ body {
 /* ===== Stats Section ===== */
 .stats {
   padding: 60px 20px;
-  display: flex;
+  display: flex: 1 1 200px;
   justify-content: center;
   gap: 40px;
   text-align: center;
@@ -477,3 +477,4 @@ footer .social-icons a:hover {
     min-width: 100%;
   }
 }
+
