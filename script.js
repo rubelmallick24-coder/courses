@@ -1,4 +1,4 @@
-// Contact form alert
+// Contact form submission
 const form = document.getElementById('contactForm');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -9,7 +9,4 @@ form.addEventListener('submit', (e) => {
 // Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('nav-active');
-});
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('nav-active'));
