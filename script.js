@@ -7,62 +7,90 @@ menuToggle.addEventListener('click', () => {
 });
 
 // ===== Scroll Reveal =====
-const reveals = document.querySelectorAll('.reveal');
+const revealElements = document.querySelectorAll('.reveal, .hero-title, .hero-subtitle');
 
-const scrollReveal = () => {
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const revealPoint = 150;
-
-    if (elementTop < windowHeight - revealPoint) {
-      reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+  revealElements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 50) {
+      el.classList.add('active');
     }
-  }
+  });
 };
 
-window.addEventListener('scroll', scrollReveal);
-window.addEventListener('load', scrollReveal);
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-// ===== Testimonials Slider =====
+// ===== Testimonial Slider =====
 const slider = document.querySelector('.testimonial-slider');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const slides = document.querySelectorAll('.testimonial-card');
-let currentIndex = 0;
+let index = 0;
 
-const updateSlider = () => {
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-};
+if (slider) {
+  const totalSlides = slider.children.length;
 
-// Next Button
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateSlider();
-});
+  const updateSlider = () => {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
 
-// Previous Button
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateSlider();
-});
+  prevBtn.addEventListener('click', () => {
+    index = index === 0 ? totalSlides - 1 : index - 1;
+    updateSlider();
+  });
 
-// Optional: Auto slide every 5 seconds
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateSlider();
-}, 5000);
+  nextBtn.addEventListener('click', () => {
+    index = index === totalSlides - 1 ? 0 : index + 1;
+    updateSlider();
+  });
+}
 
-// ===== Smooth Scrolling for Nav Links =====
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
-    if(navLinks.classList.contains('nav-active')) {
-      navLinks.classList.remove('nav-active');
+// ===== Stats Count Up Animation =====
+const counters = document.querySelectorAll(".stat h3");
+
+function countUp(counter) {
+  let target = +counter.getAttribute("data-target");
+  let duration = 1500; 
+  let startTime = null;
+
+  function animateCount(timestamp) {
+    if (!startTime) startTime = timestamp;
+    let progress = timestamp - startTime;
+    let percentage = Math.min(progress / duration, 1);
+
+    let easedProgress = 1 - Math.pow(1 - percentage, 3); // ease out cubic
+    let current = Math.floor(easedProgress * target);
+    counter.innerText = current;
+
+    if (percentage < 1) {
+      requestAnimationFrame(animateCount);
+    } else {
+      counter.innerText = target;
+    }
+  }
+
+  requestAnimationFrame(animateCount);
+}
+
+function checkStats() {
+  const windowHeight = window.innerHeight;
+
+  counters.forEach(counter => {
+    const elementTop = counter.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 50 && !counter.classList.contains("counted")) {
+      counter.classList.add("counted");
+      counter.innerText = "0";
+      countUp(counter);
+    }
+
+    if (elementTop > windowHeight) {
+      counter.classList.remove("counted");
+      counter.innerText = "0";
     }
   });
-});
+}
+
+window.addEventListener("scroll", checkStats);
+window.addEventListener("load", checkStats);
