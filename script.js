@@ -47,7 +47,7 @@ form.addEventListener('submit', function(e) {
   });
 });
 
-// ===== Testimonial Slider =====
+// ===== Testimonials Slider =====
 const slider = document.querySelector('.testimonial-slider');
 const cards = document.querySelectorAll('.testimonial-card');
 const prevBtn = document.getElementById('prev');
@@ -85,7 +85,5 @@ function resetInterval() {
   }, 5000);
 }
 
-// Initialize
+// Initialize slider
 showSlide(currentIndex);
-
-
