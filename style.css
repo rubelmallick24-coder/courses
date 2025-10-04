@@ -287,75 +287,44 @@ body {
   transform: rotate(-15deg);
 }
 
-/* ===== Testimonials Section ===== */
-.testimonials {
-  padding: 70px 0;
-  text-align: center;
-  background: #fff;
-}
-
-.testimonials h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+.testimonial-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
 }
 
 .testimonial-slider {
   display: flex;
-  width: 400%;
-  animation: slide 20s infinite;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.testimonial-nav button {
+  background: rgba(26,115,232,0.8);
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.testimonial-nav button:hover {
+  background: #1a73e8;
 }
 
 .testimonial-card {
   min-width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px 25px;
-  border-radius: 15px;
-  background: #f9f9f9;
   flex-shrink: 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.testimonial-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 2px solid #1a73e8;
-}
-
-.testimonial-card p {
-  font-style: italic;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.testimonial-card h4 {
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-.stars {
-  color: #f39c12;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-/* Slider Animation */
-@keyframes slide {
-  0% { transform: translateX(0%); }
-  20% { transform: translateX(0%); }
-  25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
-  100% { transform: translateX(0%); }
 }
 
 /* ===== Contact Form ===== */
@@ -457,3 +426,4 @@ footer .social-icons a:hover {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
