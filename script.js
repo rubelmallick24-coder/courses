@@ -6,63 +6,63 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('nav-active');
 });
 
-// ===== Smooth Scroll =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-    navLinks.classList.remove('nav-active');
-  });
-});
+// ===== Scroll Reveal =====
+const reveals = document.querySelectorAll('.reveal');
 
-// ===== Formspree Submission =====
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
+const scrollReveal = () => {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
 
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Thank you! We received your details.');
-      form.reset();
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add('active');
     } else {
-      alert('Oops! There was a problem submitting your form.');
+      reveals[i].classList.remove('active');
     }
-  }).catch(error => {
-    alert('Oops! There was a problem submitting your form.');
-    console.error(error);
-  });
-});
+  }
+};
+
+window.addEventListener('scroll', scrollReveal);
+window.addEventListener('load', scrollReveal);
 
 // ===== Testimonials Slider =====
 const slider = document.querySelector('.testimonial-slider');
-const cards = document.querySelectorAll('.testimonial-card');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const slides = document.querySelectorAll('.testimonial-card');
 let currentIndex = 0;
 
-function showSlide(index) {
-  if (index < 0) currentIndex = cards.length - 1;
-  else if (index >= cards.length) currentIndex = 0;
-  else currentIndex = index;
+const updateSlider = () => {
   slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+};
 
-let autoSlide = setInterval(() => { showSlide(currentIndex + 1); }, 5000);
+// Next Button
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+});
 
-prevBtn.addEventListener('click', () => { showSlide(currentIndex - 1); resetInterval(); });
-nextBtn.addEventListener('click', () => { showSlide(currentIndex + 1); resetInterval(); });
+// Previous Button
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
+});
 
-function resetInterval() {
-  clearInterval(autoSlide);
-  autoSlide = setInterval(() => { showSlide(currentIndex + 1); }, 5000);
-}
+// Optional: Auto slide every 5 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}, 5000);
 
-showSlide(currentIndex);
+// ===== Smooth Scrolling for Nav Links =====
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+    if(navLinks.classList.contains('nav-active')) {
+      navLinks.classList.remove('nav-active');
+    }
+  });
+});
