@@ -242,7 +242,6 @@ body {
   background: #155cb0;
 }
 
-/* Icon Circle */
 .icon-circle {
   width: 60px;
   height: 60px;
@@ -287,6 +286,18 @@ body {
   transform: rotate(-15deg);
 }
 
+/* ===== Testimonials Section ===== */
+.testimonials {
+  padding: 70px 0;
+  text-align: center;
+  background: #fff;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
 .testimonial-wrapper {
   position: relative;
   max-width: 800px;
@@ -297,6 +308,44 @@ body {
 .testimonial-slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+  min-width: 100%;
+  flex-shrink: 0;
+  padding: 30px 25px;
+  border-radius: 15px;
+  background: #f9f9f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-img {
+  width: 50px;          
+  height: 50px;         
+  border-radius: 50%;   
+  object-fit: cover;    
+  margin-bottom: 10px;  
+  border: 2px solid #1a73e8;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.testimonial-card h4 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.stars {
+  color: #f39c12;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .testimonial-nav {
@@ -320,11 +369,6 @@ body {
 
 .testimonial-nav button:hover {
   background: #1a73e8;
-}
-
-.testimonial-card {
-  min-width: 100%;
-  flex-shrink: 0;
 }
 
 /* ===== Contact Form ===== */
@@ -405,12 +449,7 @@ footer .social-icons a:hover {
     color: #fff;
   }
 
-  .course-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pricing-cards {
+  .course-cards, .pricing-cards {
     flex-direction: column;
     align-items: center;
   }
@@ -426,4 +465,3 @@ footer .social-icons a:hover {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
