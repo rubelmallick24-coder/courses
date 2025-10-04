@@ -1,206 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TradeMaster Academy - Learn Trading Online</title>
+  <title>Trading Course</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<!-- Header -->
-<header class="header">
-  <div class="container header-container">
-    <div class="logo">TradeMaster Academy</div>
-    <nav>
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">Pro Trading</div>
       <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
         <li><a href="#courses">Courses</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Enroll</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    </nav>
-  </div>
-</header>
+      <div class="menu-toggle">&#9776;</div>
+    </div>
+  </header>
 
-<!-- Hero Section -->
-<section class="hero reveal">
-  <div class="hero-content">
-    <h2 class="hero-title">Become a Pro Trader</h2>
-    <p class="hero-subtitle">Learn Stocks, Crypto & Forex Trading with Experts</p>
-    <a href="#courses" class="btn btn-primary hero-btn">Enroll Now</a>
-  </div>
-</section>
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h2 class="hero-title reveal">Become a Pro Trader</h2>
+      <p class="hero-subtitle reveal">Learn Stocks, Crypto & Forex Trading with Experts</p>
+      <a href="#courses" class="hero-btn">Explore Courses</a>
+    </div>
+  </section>
 
-<!-- Statistics Section -->
-<section class="stats reveal">
-  <div class="container stats-container">
-    <div class="stat-card">
-      <h3>500</h3>
+  <!-- ===== Stats Section ===== -->
+  <section class="stats">
+    <div class="stat reveal">
+      <h3 data-target="500">0</h3>
       <p>Students Trained</p>
     </div>
-    <div class="stat-card">
-      <h3>80</h3>
+    <div class="stat reveal">
+      <h3 data-target="80">0</h3>
       <p>Success Rate (%)</p>
     </div>
-    <div class="stat-card">
-      <h3>50</h3>
+    <div class="stat reveal">
+      <h3 data-target="50">0</h3>
       <p>Expert Mentors</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Courses Section -->
-<section id="courses" class="courses reveal">
-  <div class="container">
-    <h2>Our Courses</h2>
+  <!-- ===== Courses Section ===== -->
+  <section class="courses" id="courses">
+    <h2 class="reveal">Our Courses</h2>
     <div class="course-cards">
-
-      <!-- Course 1 -->
-      <div class="card course-card">
-        <img src="https://via.placeholder.com/300x180.png?text=Beginner+Trading" alt="Beginner Trading" class="course-img">
+      <div class="card course-card reveal">
+        <img src="https://source.unsplash.com/300x180/?stock,market" alt="Course 1" class="course-img">
         <div class="card-content">
-          <div class="icon-circle"><i class="fas fa-chalkboard-teacher fa-2x"></i></div>
-          <h3>Beginner Trading</h3>
-          <p>Start from scratch and learn the basics of trading, chart reading, and market analysis.</p>
-          <a href="YOUR_RAZORPAY_PAYMENT_LINK_BASIC" target="_blank" class="btn btn-primary">Buy Now</a>
+          <h3>Stock Trading Mastery</h3>
+          <p>Learn the basics and advanced techniques of stock trading.</p>
+          <a href="#contact" class="btn-primary">Enroll Now</a>
         </div>
       </div>
-
-      <!-- Course 2 -->
-      <div class="card course-card">
-        <img src="https://via.placeholder.com/300x180.png?text=Pro+Trading" alt="Pro Trading" class="course-img">
+      <div class="card course-card reveal">
+        <img src="https://source.unsplash.com/300x180/?crypto" alt="Course 2" class="course-img">
         <div class="card-content">
-          <div class="icon-circle"><i class="fas fa-chalkboard-teacher fa-2x"></i></div>
-          <h3>Pro Trading</h3>
-          <p>Advanced strategies, risk management, and trading psychology for consistent profits.</p>
-          <a href="YOUR_RAZORPAY_PAYMENT_LINK_PRO" target="_blank" class="btn btn-primary">Buy Now</a>
+          <h3>Crypto Trading Secrets</h3>
+          <p>Master crypto charts, signals, and risk management strategies.</p>
+          <a href="#contact" class="btn-primary">Enroll Now</a>
         </div>
       </div>
-
-      <!-- Course 3 -->
-      <div class="card course-card">
-        <img src="https://via.placeholder.com/300x180.png?text=Premium+Trading" alt="Premium Trading" class="course-img">
+      <div class="card course-card reveal">
+        <img src="https://source.unsplash.com/300x180/?forex" alt="Course 3" class="course-img">
         <div class="card-content">
-          <div class="icon-circle"><i class="fas fa-chalkboard-teacher fa-2x"></i></div>
-          <h3>Premium Trading</h3>
-          <p>All-inclusive package with mentorship, live sessions, and lifetime access.</p>
-          <a href="YOUR_RAZORPAY_PAYMENT_LINK_PREMIUM" target="_blank" class="btn btn-primary">Buy Now</a>
+          <h3>Forex Pro Course</h3>
+          <p>Learn currency pair trading from industry experts.</p>
+          <a href="#contact" class="btn-primary">Enroll Now</a>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Pricing Section -->
-<section id="pricing" class="pricing reveal">
-  <div class="container">
-    <h2>Pricing Plans</h2>
+  <!-- ===== Pricing Section ===== -->
+  <section class="pricing" id="pricing">
+    <h2 class="reveal">Pricing Plans</h2>
     <div class="pricing-cards">
-      <div class="card pricing-card">
-        <div class="ribbon">Basic</div>
-        <h3>Beginner</h3>
-        <p>₹3,999</p>
-        <p>Learn the basics of trading.</p>
-        <a href="YOUR_RAZORPAY_PAYMENT_LINK_BASIC" target="_blank" class="btn btn-primary">Buy Now</a>
+      <div class="card pricing-card reveal">
+        <h3>Basic</h3>
+        <p>$49</p>
+        <p>Beginner trading strategies</p>
+        <a href="#contact" class="btn-primary">Buy Now</a>
       </div>
-      <div class="card pricing-card">
-        <div class="ribbon">Pro</div>
+      <div class="card pricing-card reveal">
+        <h3>Advanced</h3>
+        <p>$99</p>
+        <p>Advanced stock, forex & crypto</p>
+        <a href="#contact" class="btn-primary">Buy Now</a>
+      </div>
+      <div class="card pricing-card reveal">
         <h3>Pro</h3>
-        <p>₹7,999</p>
-        <p>Advanced strategies & mentorship.</p>
-        <a href="YOUR_RAZORPAY_PAYMENT_LINK_PRO" target="_blank" class="btn btn-primary">Buy Now</a>
-      </div>
-      <div class="card pricing-card">
-        <div class="ribbon">Premium</div>
-        <h3>Premium</h3>
-        <p>₹11,999</p>
-        <p>All courses + lifetime access + support.</p>
-        <a href="YOUR_RAZORPAY_PAYMENT_LINK_PREMIUM" target="_blank" class="btn btn-primary">Buy Now</a>
+        <p>$199</p>
+        <p>1-on-1 Mentorship & lifetime access</p>
+        <a href="#contact" class="btn-primary">Buy Now</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="testimonials reveal">
-  <div class="container">
-    <h2>What Our Students Say</h2>
-    <div class="testimonial-wrapper">
+  <!-- ===== Testimonials Section ===== -->
+  <section class="testimonials" id="testimonials">
+    <h2 class="reveal">What Our Students Say</h2>
+    <div class="testimonial-wrapper reveal">
       <div class="testimonial-slider">
         <div class="testimonial-card">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul S." class="testimonial-img">
-          <p>"I learned so much in one month! The mentors are amazing."</p>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <h4>- Rahul S.</h4>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img" alt="user1">
+          <p>"This course completely changed my trading journey!"</p>
+          <div class="stars">★★★★★</div>
+          <h4>- John</h4>
         </div>
         <div class="testimonial-card">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K." class="testimonial-img">
-          <p>"The Pro plan gave me strategies I apply daily. Excellent support!"</p>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>- Priya K.</h4>
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img" alt="user2">
+          <p>"The mentors are amazing and strategies work great."</p>
+          <div class="stars">★★★★☆</div>
+          <h4>- Sarah</h4>
         </div>
         <div class="testimonial-card">
-          <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Ankit M." class="testimonial-img">
-          <p>"Crypto course helped me earn consistent profits safely."</p>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <h4>- Ankit M.</h4>
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" class="testimonial-img" alt="user3">
+          <p>"Highly recommend for anyone serious about trading."</p>
+          <div class="stars">★★★★★</div>
+          <h4>- Mike</h4>
         </div>
       </div>
       <div class="testimonial-nav">
-        <button id="prev"><i class="fas fa-chevron-left"></i></button>
-        <button id="next"><i class="fas fa-chevron-right"></i></button>
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact / Enroll Form -->
-<section id="contact" class="contact reveal">
-  <div class="container">
-    <h2>Enroll Now</h2>
-    <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <select name="course" required>
-        <option value="">Select Course Plan</option>
-        <option value="basic">Basic - ₹3,999</option>
-        <option value="pro">Pro - ₹7,999</option>
-        <option value="premium">Premium - ₹11,999</option>
+  <!-- ===== Contact Section ===== -->
+  <section class="contact" id="contact">
+    <h2 class="reveal">Enroll Now</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <select>
+        <option value="">Select Course</option>
+        <option>Stock Trading Mastery</option>
+        <option>Crypto Trading Secrets</option>
+        <option>Forex Pro Course</option>
       </select>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit">Submit</button>
     </form>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2025 TradeMaster Academy. All Rights Reserved.</p>
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Pro Trading. All Rights Reserved.</p>
     <div class="social-icons">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
       <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
