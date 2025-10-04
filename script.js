@@ -6,84 +6,63 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('nav-active');
 });
 
-// ===== Smooth Scroll for Navigation =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+// ===== Scroll Reveal =====
+const reveals = document.querySelectorAll('.reveal');
+
+const scrollReveal = () => {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add('active');
+    } else {
+      reveals[i].classList.remove('active');
+    }
+  }
+};
+
+window.addEventListener('scroll', scrollReveal);
+window.addEventListener('load', scrollReveal);
+
+// ===== Testimonials Slider =====
+const slider = document.querySelector('.testimonial-slider');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const slides = document.querySelectorAll('.testimonial-card');
+let currentIndex = 0;
+
+const updateSlider = () => {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+};
+
+// Next Button
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+});
+
+// Previous Button
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
+});
+
+// Optional: Auto slide every 5 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}, 5000);
+
+// ===== Smooth Scrolling for Nav Links =====
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({
-      behavior: 'smooth'
-    });
+    target.scrollIntoView({ behavior: 'smooth' });
     if(navLinks.classList.contains('nav-active')) {
       navLinks.classList.remove('nav-active');
     }
   });
 });
-
-// ===== Formspree Form Submission =====
-const form = document.getElementById('contactForm');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      alert('Thank you! We have received your details.');
-      form.reset();
-    } else {
-      alert('Oops! There was a problem submitting your form.');
-    }
-  }).catch(error => {
-    alert('Oops! There was a problem submitting your form.');
-    console.error(error);
-  });
-});
-
-// ===== Testimonials Slider =====
-const slider = document.querySelector('.testimonial-slider');
-const cards = document.querySelectorAll('.testimonial-card');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-let currentIndex = 0;
-
-function showSlide(index) {
-  if (index < 0) currentIndex = cards.length - 1;
-  else if (index >= cards.length) currentIndex = 0;
-  else currentIndex = index;
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-// Auto-slide every 5 seconds
-let autoSlide = setInterval(() => {
-  showSlide(currentIndex + 1);
-}, 5000);
-
-// Navigation buttons
-prevBtn.addEventListener('click', () => {
-  showSlide(currentIndex - 1);
-  resetInterval();
-});
-
-nextBtn.addEventListener('click', () => {
-  showSlide(currentIndex + 1);
-  resetInterval();
-});
-
-// Reset auto-slide interval when user clicks
-function resetInterval() {
-  clearInterval(autoSlide);
-  autoSlide = setInterval(() => {
-    showSlide(currentIndex + 1);
-  }, 5000);
-}
-
-// Initialize slider
-showSlide(currentIndex);
