@@ -31,9 +31,23 @@ body { background:#f8f9fa; color:#333; line-height:1.6; scroll-behavior:smooth; 
 
 /* Courses */
 .courses h2, .pricing h2, .testimonials h2, .contact h2 { font-family: 'Roboto Slab', serif; font-size:2rem; margin-bottom:40px; }
-.course-cards, .pricing-cards, .testimonial-cards { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-.card { background:#fff; padding:25px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.1); flex:1 1 250px; max-width:300px; transition: transform 0.3s; position:relative; }
-.card:hover { transform: translateY(-5px); }
+.course-cards { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.card { background:#fff; padding:25px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.1); flex:1 1 250px; max-width:300px; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+.card:hover { transform: translateY(-10px); box-shadow:0 15px 25px rgba(0,0,0,0.2); }
+.image-container { position:relative; overflow:hidden; border-radius:10px 10px 0 0; }
+.course-img { width:100%; height:180px; object-fit:cover; margin-bottom:15px; transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius:10px 10px 0 0; }
+.card:hover .course-img { transform: scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+
+/* Overlay */
+.overlay { position:absolute; bottom:-100%; left:0; width:100%; height:100%; background:rgba(43,108,176,0.6); display:flex; justify-content:center; align-items:center; transition: bottom 0.4s ease; border-radius:10px 10px 0 0; }
+.image-container:hover .overlay { bottom:0; }
+.btn-overlay { background:#f59e0b; color:#fff; padding:10px 20px; border-radius:5px; font-weight:600; text-decoration:none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.btn-overlay:hover { background:#b45309; transform: scale(1.1); box-shadow:0 8px 15px rgba(0,0,0,0.3); }
+
+/* Card content animation */
+.card-content { transition: transform 0.4s ease, opacity 0.4s ease; transform: translateY(20px); opacity:0.7; }
+.card:hover .card-content { transform: translateY(0); opacity:1; }
+
 .icon-circle { background:#2b6cb0; color:#fff; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; margin:0 auto 15px; }
 
 /* Pricing */
@@ -49,6 +63,7 @@ body { background:#f8f9fa; color:#333; line-height:1.6; scroll-behavior:smooth; 
 .form-group input::placeholder { color:#999; }
 
 /* Testimonials */
+.testimonial-cards { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
 .testimonial-cards .card { min-height:150px; }
 
 /* Trust Badges */
