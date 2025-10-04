@@ -79,20 +79,27 @@ body {
   overflow: hidden;
 }
 
-.hero-title {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.hero-title,
+.hero-subtitle {
   transform: translateY(-20px);
   opacity: 0;
   transition: all 0.8s ease;
 }
 
+.hero-title.active,
+.hero-subtitle.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: all 0.8s ease 0.2s;
 }
 
 .hero-btn {
@@ -111,29 +118,24 @@ body {
   transform: translateY(-3px);
 }
 
-/* ===== Stats Section (Fixed Side by Side) ===== */
+/* ===== Stats Section ===== */
 .stats {
   padding: 60px 20px;
-  background: #f5f5f5;
-}
-
-.stats-container {
   display: flex;
   justify-content: center;
   gap: 60px;
   text-align: center;
-  flex-wrap: wrap;
 }
 
-.stats-container .stat h3 {
+.stat h3 {
   font-size: 2.5rem;
   color: #1a73e8;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.stats-container .stat p {
+.stat p {
   font-size: 1.1rem;
-  color: #333;
+  font-weight: 500;
 }
 
 /* ===== Courses Section ===== */
@@ -254,7 +256,6 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
 }
 
 .card.pricing-card:hover {
@@ -469,6 +470,7 @@ footer .social-icons a:hover {
   }
 
   .stats-container {
+    flex-direction: column;
     gap: 30px;
   }
 }
