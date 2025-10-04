@@ -108,11 +108,11 @@ body {
 /* ===== Stats Section ===== */
 .stats {
   padding: 60px 20px;
-  display: flex: 1 1 200px;
+  display: flex;
   justify-content: center;
   gap: 40px;
   text-align: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 .stat-card {
@@ -121,19 +121,14 @@ body {
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s;
-  flex: 0 1 200px;
-  max-width: 250px;
+  flex: 1 1 200px; /* ensures cards grow equally and stay side by side */
+  max-width: 250px; /* optional: limit width */
 }
 
 .stat-card h3 {
   font-size: 2rem;
   color: #1a73e8;
   margin-bottom: 10px;
-  transition: transform 0.3s;
-}
-
-.stat-card:hover h3 {
-  transform: scale(1.2);
 }
 
 .stat-card p {
@@ -476,5 +471,15 @@ footer .social-icons a:hover {
   .testimonial-card {
     min-width: 100%;
   }
-}
 
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .stat-card {
+    max-width: 300px;
+    flex: 1 1 100%;
+  }
+}
