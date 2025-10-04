@@ -24,7 +24,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent default form submission
+  e.preventDefault();
 
   const formData = new FormData(form);
 
@@ -36,7 +36,7 @@ form.addEventListener('submit', function(e) {
     }
   }).then(response => {
     if (response.ok) {
-      alert('Thank you for enrolling! We have received your details.');
+      alert('Thank you! We have received your details.');
       form.reset();
     } else {
       alert('Oops! There was a problem submitting your form.');
