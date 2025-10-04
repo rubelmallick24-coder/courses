@@ -82,11 +82,17 @@ body {
 .hero-title {
   font-size: 3rem;
   margin-bottom: 10px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 20px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.8s ease 0.2s;
 }
 
 .hero-btn {
@@ -105,40 +111,29 @@ body {
   transform: translateY(-3px);
 }
 
-/* ===== Stats Section ===== */
+/* ===== Stats Section (Fixed Side by Side) ===== */
 .stats {
   padding: 60px 20px;
+  background: #f5f5f5;
+}
+
+.stats-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   text-align: center;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  flex-wrap: wrap;
 }
 
-.stat-card {
-  background: #fff;
-  padding: 30px 40px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-  flex: 1 1 200px; /* ensures cards grow equally and stay side by side */
-  max-width: 250px; /* optional: limit width */
-}
-
-.stat-card h3 {
-  font-size: 2rem;
+.stats-container .stat h3 {
+  font-size: 2.5rem;
   color: #1a73e8;
   margin-bottom: 10px;
 }
 
-.stat-card p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #555;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
+.stats-container .stat p {
+  font-size: 1.1rem;
+  color: #333;
 }
 
 /* ===== Courses Section ===== */
@@ -190,6 +185,7 @@ body {
 .card-content {
   padding: 20px;
   text-align: center;
+  transition: transform 0.3s;
 }
 
 .card-content h3 {
@@ -251,7 +247,6 @@ body {
 }
 
 .card.pricing-card {
-  position: relative;
   background: #fff;
   border-radius: 15px;
   padding: 25px 20px;
@@ -259,6 +254,7 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 .card.pricing-card:hover {
@@ -319,8 +315,8 @@ body {
 }
 
 .testimonial-img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 8px;
@@ -472,14 +468,7 @@ footer .social-icons a:hover {
     min-width: 100%;
   }
 
-  .stats {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .stat-card {
-    max-width: 300px;
-    flex: 1 1 100%;
+  .stats-container {
+    gap: 30px;
   }
 }
