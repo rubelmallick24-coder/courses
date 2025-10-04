@@ -1,4 +1,4 @@
-// ===== Mobile Menu Toggle =====
+// ===== Menu Toggle =====
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -7,62 +7,72 @@ menuToggle.addEventListener('click', () => {
 });
 
 // ===== Scroll Reveal =====
-const reveals = document.querySelectorAll('.reveal');
+const revealElements = document.querySelectorAll('.reveal');
 
-const scrollReveal = () => {
-  for (let i = 0; i < reveals.length; i++) {
+function revealOnScroll() {
+  for (let i = 0; i < revealElements.length; i++) {
     const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementTop = revealElements[i].getBoundingClientRect().top;
     const revealPoint = 150;
 
     if (elementTop < windowHeight - revealPoint) {
-      reveals[i].classList.add('active');
+      revealElements[i].classList.add('active');
     } else {
-      reveals[i].classList.remove('active');
+      revealElements[i].classList.remove('active');
     }
   }
-};
+}
 
-window.addEventListener('scroll', scrollReveal);
-window.addEventListener('load', scrollReveal);
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
 // ===== Testimonials Slider =====
-const slider = document.querySelector('.testimonial-slider');
+const testimonialSlider = document.querySelector('.testimonial-slider');
+const testimonialCards = document.querySelectorAll('.testimonial-card');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const slides = document.querySelectorAll('.testimonial-card');
+
 let currentIndex = 0;
 
-const updateSlider = () => {
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-};
+function showSlide(index) {
+  if (index < 0) currentIndex = testimonialCards.length - 1;
+  else if (index >= testimonialCards.length) currentIndex = 0;
+  else currentIndex = index;
 
-// Next Button
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateSlider();
-});
+  testimonialSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
-// Previous Button
 prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateSlider();
+  showSlide(currentIndex - 1);
 });
 
-// Optional: Auto slide every 5 seconds
+nextBtn.addEventListener('click', () => {
+  showSlide(currentIndex + 1);
+});
+
+// Auto slide every 5 seconds
 setInterval(() => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateSlider();
+  showSlide(currentIndex + 1);
 }, 5000);
 
-// ===== Smooth Scrolling for Nav Links =====
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
-    if(navLinks.classList.contains('nav-active')) {
-      navLinks.classList.remove('nav-active');
+// ===== Stats Count Up =====
+const stats = document.querySelectorAll('.stat-card h3');
+
+stats.forEach(stat => {
+  const target = +stat.innerText;
+  stat.innerText = '0';
+
+  const increment = target / 100;
+
+  function updateCount() {
+    const current = +stat.innerText;
+    if (current < target) {
+      stat.innerText = Math.ceil(current + increment);
+      setTimeout(updateCount, 20);
+    } else {
+      stat.innerText = target;
     }
-  });
+  }
+
+  updateCount();
 });
