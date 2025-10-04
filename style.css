@@ -114,19 +114,19 @@ body {
 .stats {
   padding: 60px 20px;
   display: flex;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
-  justify-content: center;
-  gap: 40px;
+  justify-content: center; /* center the cards horizontally */
+  gap: 40px; /* space between cards */
   text-align: center;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
 
 .stat-card {
   background: #fff;
-  padding: 30px 40px; /* slightly bigger for better look */
+  padding: 30px 40px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s;
-  flex: 1 1 200px; /* allows responsive sizing */
+  flex: 0 1 200px; /* flex-grow:0, flex-shrink:1, base-width:200px */
   max-width: 250px;
 }
 
@@ -145,6 +145,19 @@ body {
 .stat-card:hover {
   transform: translateY(-5px);
 }
+
+/* Mobile: stack vertically */
+@media screen and (max-width: 768px) {
+  .stats {
+    gap: 20px;
+  }
+
+  .stat-card {
+    flex: 1 1 100%; /* take full width */
+    max-width: 100%;
+  }
+}
+
 
 
 /* ===== Courses Section ===== */
@@ -484,4 +497,5 @@ footer .social-icons a:hover {
     min-width: 100%;
   }
 }
+
 
