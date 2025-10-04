@@ -46,3 +46,46 @@ form.addEventListener('submit', function(e) {
     console.error(error);
   });
 });
+
+// ===== Testimonial Slider =====
+const slider = document.querySelector('.testimonial-slider');
+const cards = document.querySelectorAll('.testimonial-card');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let currentIndex = 0;
+
+function showSlide(index) {
+  if (index < 0) currentIndex = cards.length - 1;
+  else if (index >= cards.length) currentIndex = 0;
+  else currentIndex = index;
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Auto-slide every 5 seconds
+let autoSlide = setInterval(() => {
+  showSlide(currentIndex + 1);
+}, 5000);
+
+// Navigation buttons
+prevBtn.addEventListener('click', () => {
+  showSlide(currentIndex - 1);
+  resetInterval();
+});
+
+nextBtn.addEventListener('click', () => {
+  showSlide(currentIndex + 1);
+  resetInterval();
+});
+
+// Reset auto-slide interval when user clicks
+function resetInterval() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(() => {
+    showSlide(currentIndex + 1);
+  }, 5000);
+}
+
+// Initialize
+showSlide(currentIndex);
+
+
