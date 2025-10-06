@@ -202,28 +202,61 @@ body {
   border-radius: 50%;
 }
 
-/* Testimonials */
 .testimonials {
-  background: #fff;
-  padding: 60px 20px;
+  padding: 50px 20px;
+  background: #f9f9f9;
   text-align: center;
 }
+
+.testimonials h2 {
+  margin-bottom: 40px;
+  color: #0077ff;
+  font-size: 28px;
+}
+
 .testimonial-slider {
-  position: relative;
-  max-width: 600px;
-  margin: auto;
+  display: flex;
+  overflow: hidden;
+  gap: 30px;
 }
+
 .testimonial {
-  display: none;
+  flex: 0 0 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
+
 .testimonial.active {
-  display: block;
+  transform: scale(1.05);
 }
+
 .testimonial img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
+}
+
+.testimonial h3 {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00acee;
+}
+
+.testimonial p {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.testimonial .stars {
+  font-size: 18px;
+  color: #FFD700; /* Gold stars */
 }
 
 /* Footer */
@@ -267,5 +300,6 @@ body {
 .dark .header { background: rgba(30, 30, 30, 0.8); }
 .dark .course-card, .dark .mentor-card { background: #161b22; color: #eee; }
 .dark .footer { background: #000; }
+
 
 
