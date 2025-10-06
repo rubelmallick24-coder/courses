@@ -1,318 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RBL Trading — Become a Pro Trader</title>
-  <meta name="description" content="RBL Trading — Learn Stocks, Crypto & Forex with expert mentorship. Enroll now!" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBL Trading Academy</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ========== HEADER ========== -->
-  <header id="site-header" class="header">
-    <div class="container header-inner">
-      <div class="logo">
-        <!-- simple SVG icon + text -->
-        <svg viewBox="0 0 24 24" class="logo-icon" aria-hidden="true">
-          <path d="M3 21h18v-2H3v2zM6 13l4-6 4 5 4-8 2 16H6z" fill="currentColor"/>
-        </svg>
-        <div class="logo-text">
-          <span class="brand">RBL Trading</span>
-          <small class="tag">Master the Markets</small>
-        </div>
-      </div>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#mentors">Mentors</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">🌙</button>
-      </div>
-    </div>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="logo">📈 RBL Trading</div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#mentors">Mentors</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+      <button id="modeToggle">🌙</button>
+    </nav>
   </header>
 
-  <!-- ========== TICKER ========== -->
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <div class="ticker-item">NIFTY 50 ▲ 1.32% &nbsp; | &nbsp; BTC/USD ▼ 0.81% &nbsp; | &nbsp; NASDAQ ▲ 0.64% &nbsp; | &nbsp; GOLD ▲ 0.12%</div>
-      <div class="ticker-item">NIFTY 50 ▲ 1.32% &nbsp; | &nbsp; BTC/USD ▼ 0.81% &nbsp; | &nbsp; NASDAQ ▲ 0.64% &nbsp; | &nbsp; GOLD ▲ 0.12%</div>
-    </div>
-  </div>
-
-  <!-- ========== HERO / SLIDER ========== -->
-  <section id="home" class="hero">
-    <div class="hero-slider">
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1567427018141-0584cfcbf1dc?auto=format&fit=crop&w=1600&q=60')">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-          <h1 class="hero-title">Become a Pro Trader with Expert Mentorship</h1>
-          <p class="hero-sub">Learn Stocks, Crypto, and Forex — real strategies, live sessions, lifetime access.</p>
-          <div class="hero-ctas">
-            <!-- placeholder - replace whatsapp link -->
-            <a class="btn btn-primary" id="enroll-btn" href="https://wa.me/000000000000?text=I%20want%20to%20enroll" target="_blank" rel="noopener">Enroll Now</a>
-            <button class="btn btn-outline" id="watch-demo">Watch Demo</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1559521786-c75a0eaa10b8?auto=format&fit=crop&w=1600&q=60')">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-          <h1 class="hero-title">Trade Confidently — From Basics to Advanced</h1>
-          <p class="hero-sub">Live trade analysis, mentorship calls & community support.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="https://wa.me/000000000000?text=I%20want%20to%20enroll" target="_blank" rel="noopener">Enroll Now</a>
-            <button class="btn btn-outline" id="watch-demo-2">Watch Demo</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-controls container">
-      <div class="slider-dots" id="hero-dots"></div>
-    </div>
-  </section>
-
-  <!-- ========== STATS SECTION (right after banner) ========== -->
-  <section id="stats" class="stats-section">
-    <div class="container stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon">👥</div>
-        <h3 class="stat-number" data-target="10000">0</h3>
-        <p class="stat-label">Students</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🔴</div>
-        <h3 class="stat-number" data-target="100">0</h3>
-        <p class="stat-label">Live Sessions</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🏆</div>
-        <h3 class="stat-number" data-target="5">0</h3>
-        <p class="stat-label">Years Experience</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">⭐</div>
-        <h3 class="stat-number" data-target="500">0</h3>
-        <p class="stat-label">5⭐ Reviews</p>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Become a Pro Trader with Expert Mentorship</h1>
+      <p>Learn Stocks, Crypto & Forex from Professionals</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">🎓 Enroll Now</a>
+        <a href="#" class="btn-secondary">▶ Watch Demo</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== HIGHLIGHTS ========== -->
-  <section class="highlights container">
-    <div class="highlight-card">
-      <div class="h-ico">👨‍🏫</div>
-      <h4>Expert Mentors</h4>
-      <p>Industry traders teaching practical strategies.</p>
+  <!-- ===== STATS SECTION ===== -->
+  <section class="stats">
+    <div class="stat">
+      <h2 class="counter" data-target="10000">0</h2>
+      <p>Students</p>
     </div>
-    <div class="highlight-card">
-      <div class="h-ico">📈</div>
-      <h4>Live Trading</h4>
-      <p>Real-time sessions and trade walkthroughs.</p>
+    <div class="stat">
+      <h2 class="counter" data-target="100">0</h2>
+      <p>Live Sessions</p>
     </div>
-    <div class="highlight-card">
-      <div class="h-ico">💬</div>
-      <h4>Community Support</h4>
-      <p>Telegram & group mentorship for peer learning.</p>
+    <div class="stat">
+      <h2 class="counter" data-target="5">0</h2>
+      <p>Years of Experience</p>
     </div>
-    <div class="highlight-card">
-      <div class="h-ico">🎥</div>
-      <h4>Lifetime Access</h4>
-      <p>Rewatch recordings and continue learning.</p>
+    <div class="stat">
+      <h2 class="counter" data-target="500">0</h2>
+      <p>5⭐ Reviews</p>
     </div>
   </section>
 
-  <!-- ========== COURSES ========== -->
-  <section id="courses" class="courses container">
-    <h2 class="section-title">Our Courses</h2>
-    <p class="section-sub">Choose the learning path that suits you. All courses include live sessions and lifetime access.</p>
-
-    <div class="course-grid">
-      <!-- Course 1 -->
-      <article class="course-card">
-        <div class="course-media" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=60')">
-          <div class="ribbon">🔥 Popular</div>
-        </div>
-        <div class="course-body">
-          <h3 class="course-title">Stock Market Mastery</h3>
-          <div class="course-meta">Rating: ★ 4.9</div>
-          <ul class="course-points">
-            <li>Market basics & terminology</li>
-            <li>Technical analysis essentials</li>
-            <li>Risk & money management</li>
-            <li>Live trade setups</li>
-            <li>Backtesting strategies</li>
-            <li>Portfolio building</li>
-          </ul>
-          <div class="course-actions">
-            <a class="btn btn-buy" href="#" data-buy="stock">Buy Now</a>
-            <a class="btn btn-secondary" href="https://wa.me/000000000000?text=I%20want%20to%20enroll%20in%20Stock%20Market%20Mastery" target="_blank" rel="noopener">Enroll</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Course 2 -->
-      <article class="course-card">
-        <div class="course-media" style="background-image:url('https://images.unsplash.com/photo-1565372914312-8fcb79fd7c7a?auto=format&fit=crop&w=1200&q=60')">
-          <div class="ribbon alt">⭐ Bestseller</div>
-        </div>
-        <div class="course-body">
-          <h3 class="course-title">Crypto Pro Course</h3>
-          <div class="course-meta">Rating: ★ 4.8</div>
-          <ul class="course-points">
-            <li>Crypto fundamentals & blockchain</li>
-            <li>On-chain analysis basics</li>
-            <li>Exchange & wallet security</li>
-            <li>Short-term & long-term strategies</li>
-            <li>Altcoin screening methods</li>
-          </ul>
-          <div class="course-actions">
-            <a class="btn btn-buy" href="#" data-buy="crypto">Buy Now</a>
-            <a class="btn btn-secondary" href="https://wa.me/000000000000?text=I%20want%20to%20enroll%20in%20Crypto%20Pro%20Course" target="_blank" rel="noopener">Enroll</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Course 3 -->
-      <article class="course-card">
-        <div class="course-media" style="background-image:url('https://images.unsplash.com/photo-1581094702517-88d3f3f6369c?auto=format&fit=crop&w=1200&q=60')">
-          <div class="ribbon">💼 Pro Level</div>
-        </div>
-        <div class="course-body">
-          <h3 class="course-title">Forex: Beginner → Pro</h3>
-          <div class="course-meta">Rating: ★ 4.7</div>
-          <ul class="course-points">
-            <li>Currency pairs & market structure</li>
-            <li>Support/resistance & fib techniques</li>
-            <li>Leverage & risk management</li>
-            <li>Intraday and swing strategies</li>
-            <li>Trade journaling & analytics</li>
-          </ul>
-          <div class="course-actions">
-            <a class="btn btn-buy" href="#" data-buy="forex">Buy Now</a>
-            <a class="btn btn-secondary" href="https://wa.me/000000000000?text=I%20want%20to%20enroll%20in%20Forex%20Course" target="_blank" rel="noopener">Enroll</a>
-          </div>
-        </div>
-      </article>
-    </div>
+  <!-- ===== HIGHLIGHTS ===== -->
+  <section class="highlights">
+    <div class="highlight">👨‍🏫 Expert Mentors</div>
+    <div class="highlight">💰 Lifetime Access</div>
+    <div class="highlight">📈 Live Trading Sessions</div>
+    <div class="highlight">💬 Telegram Community</div>
   </section>
 
-  <!-- ========== MENTORS ========== -->
-  <section id="mentors" class="mentors container">
-    <h2 class="section-title">Meet the Mentors</h2>
-    <div class="mentors-grid">
-      <div class="mentor-card">
-        <img class="mentor-pic" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=60" alt="Rubel Mallick">
-        <h4>Rubel Mallick</h4>
-        <p class="mentor-role">Chief Trainer • 7+ yrs trading</p>
-      </div>
-      <div class="mentor-card">
-        <img class="mentor-pic" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=400&q=60" alt="Aman Trader">
-        <h4>Aman Trader</h4>
-        <p class="mentor-role">Technical Analyst • 5 yrs</p>
-      </div>
-      <div class="mentor-card">
-        <img class="mentor-pic" src="https://images.unsplash.com/photo-1545996124-1b7a8f3d0a6d?auto=format&fit=crop&w=400&q=60" alt="Ankit Kumar">
-        <h4>Ankit Kumar</h4>
-        <p class="mentor-role">Algo Specialist • 6 yrs</p>
-      </div>
-    </div>
-  </section>
+  <!-- ===== COURSES ===== -->
+  <section class="courses" id="courses">
+    <h2>Our Courses</h2>
+    <div class="course-container">
 
-  <!-- ========== TESTIMONIALS ========== -->
-  <section id="reviews" class="testimonials">
-    <div class="container">
-      <h2 class="section-title">Student Reviews</h2>
-      <div class="test-slider">
-        <div class="test-slide">
-          <img class="test-pic" src="https://images.unsplash.com/photo-1545996124-1b7a8f3d0a6d?auto=format&fit=crop&w=200&q=60" alt="">
-          <h4>Deepak Sharma</h4>
-          <div class="stars">★★★★★</div>
-          <p class="review">“The trading strategies I learned here helped me make consistent returns. Mentors explain complex topics simply.”</p>
-        </div>
-        <div class="test-slide">
-          <img class="test-pic" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=200&q=60" alt="">
-          <h4>Priya Singh</h4>
-          <div class="stars">★★★★★</div>
-          <p class="review">“Live sessions are the best — seeing live trades and rationales changed how I trade.”</p>
-        </div>
-        <div class="test-slide">
-          <img class="test-pic" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=60" alt="">
-          <h4>Rahul Verma</h4>
-          <div class="stars">★★★★★</div>
-          <p class="review">“Great mentor support and a friendly community. Highly recommended for beginners.”</p>
-        </div>
-      </div>
-      <div class="test-controls">
-        <button class="btn btn-sm" id="prev-test">Prev</button>
-        <button class="btn btn-sm" id="next-test">Next</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CTA STRIP ========== -->
-  <section class="cta-strip">
-    <div class="container cta-inner">
-      <h3>Ready to start your trading journey?</h3>
-      <a class="btn btn-primary" href="https://wa.me/000000000000?text=I%20want%20to%20enroll" target="_blank" rel="noopener">Enroll via WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer id="contact" class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">
-          <svg viewBox="0 0 24 24" class="logo-icon" aria-hidden="true">
-            <path d="M3 21h18v-2H3v2zM6 13l4-6 4 5 4-8 2 16H6z" fill="currentColor"/>
-          </svg>
-          <div class="logo-text">
-            <span class="brand">RBL Trading</span>
-            <small class="tag">Master the Markets</small>
-          </div>
-        </div>
-        <p class="small">Learn to trade confidently with practical mentorship.</p>
-      </div>
-
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#mentors">Mentors</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <div class="course-card">
+        <span class="ribbon">🔥 Popular</span>
+        <img src="https://images.unsplash.com/photo-1623180288264-6c3f8f9d2b4d?auto=format&fit=crop&w=800&q=60" alt="Course 1">
+        <h3>Stock Market Mastery</h3>
+        <ul>
+          <li>Basics to Advanced Strategies</li>
+          <li>Live Market Analysis</li>
+          <li>Technical & Fundamental Analysis</li>
+          <li>Portfolio Management</li>
+          <li>Lifetime Access</li>
         </ul>
+        <a href="#" class="btn-buy">Buy Now</a>
       </div>
 
-      <div>
-        <h4>Follow Us</h4>
-        <div class="socials">
-          <a href="#" aria-label="telegram">Telegram</a>
-          <a href="#" aria-label="youtube">YouTube</a>
-          <a href="#" aria-label="instagram">Instagram</a>
-        </div>
+      <div class="course-card">
+        <span class="ribbon">💼 Pro Level</span>
+        <img src="https://images.unsplash.com/photo-1620148664032-0f39a51a8c0b?auto=format&fit=crop&w=800&q=60" alt="Course 2">
+        <h3>Crypto Trading Masterclass</h3>
+        <ul>
+          <li>Learn Blockchain Basics</li>
+          <li>Trading Bots & Tools</li>
+          <li>Chart Patterns</li>
+          <li>Risk Management</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="#" class="btn-buy">Buy Now</a>
+      </div>
+
+      <div class="course-card">
+        <span class="ribbon">⭐ Bestseller</span>
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=60" alt="Course 3">
+        <h3>Forex Beginner to Pro</h3>
+        <ul>
+          <li>Forex Basics & Psychology</li>
+          <li>Advanced Scalping Techniques</li>
+          <li>Live Sessions</li>
+          <li>Mentorship Program</li>
+          <li>Community Access</li>
+        </ul>
+        <a href="#" class="btn-buy">Buy Now</a>
       </div>
     </div>
+  </section>
 
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> RBL Trading | Designed by Rubel Mallick</p>
+  <!-- ===== MENTORS ===== -->
+  <section class="mentors" id="mentors">
+    <h2>Meet Our Mentors</h2>
+    <div class="mentor-container">
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mentor 1">
+        <h3>Rubel Mallick</h3>
+        <p>Founder & Senior Market Analyst</p>
+      </div>
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Mentor 2">
+        <h3>Aman Trader</h3>
+        <p>Technical Analyst & Trainer</p>
+      </div>
+      <div class="mentor-card">
+        <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Mentor 3">
+        <h3>Ankit Sir</h3>
+        <p>Forex Expert & Strategy Coach</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="User 1">
+        <p>“RBL Trading Academy changed my life. I’m consistently profitable now!”</p>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="User 2">
+        <p>“Great mentorship and community support. Highly recommend this course!”</p>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="User 3">
+        <p>“Simple, effective, and professional. Perfect for both beginners and pros.”</p>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <h3>📈 RBL Trading Academy</h3>
+      <p>Master the Markets, Trade with Confidence.</p>
+      <div class="social-links">
+        <a href="#">📱 Telegram</a>
+        <a href="#">📷 Instagram</a>
+        <a href="#">▶ YouTube</a>
+      </div>
+      <p class="credit">© 2025 RBL Trading | Designed with ❤️ by Rubel Mallick</p>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a id="floating-whatsapp" class="floating-whatsapp" href="https://wa.me/000000000000?text=I%20want%20to%20enroll" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
-    <svg viewBox="0 0 24 24" class="wh-icon"><path d="M20.5 3.5L3.5 20.5l.1 3 3-..."/></svg>
-    <span>WhatsApp</span>
-  </a>
+  <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+  <a href="#" class="whatsapp-float">💬</a>
 
   <script src="script.js"></script>
 </body>
