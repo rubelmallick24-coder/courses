@@ -6,6 +6,36 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* ===== Stock Ticker ===== */
+.ticker-wrap {
+  width: 100%;
+  background: #0d1117; /* dark trading style */
+  overflow: hidden;
+  border-bottom: 2px solid #0077ff;
+}
+
+.ticker {
+  display: flex;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-item {
+  flex: 0 0 auto;
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ticker-item:nth-child(odd) { color: #00ff95; }  /* green style */
+.ticker-item:nth-child(even) { color: #ff4c4c; } /* red style */
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* Header */
 .header {
   display: flex;
@@ -237,4 +267,5 @@ body {
 .dark .header { background: rgba(30, 30, 30, 0.8); }
 .dark .course-card, .dark .mentor-card { background: #161b22; color: #eee; }
 .dark .footer { background: #000; }
+
 
