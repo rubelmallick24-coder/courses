@@ -38,11 +38,12 @@ function showNextTestimonial() {
   testimonials.forEach((t, i) => t.classList.toggle('active', i === index));
   index = (index + 1) % testimonials.length;
 }
-setInterval(showNextTestimonial, 4000);
+setInterval(showNextTestimonial, 3000);
 
 // ===== Dark/Light Mode =====
 document.getElementById('modeToggle').onclick = () => {
   document.body.classList.toggle('dark');
 };
+
 
 
