@@ -1,32 +1,46 @@
-// Counter animation
+// ===== Counter Animation =====
 const counters = document.querySelectorAll('.counter');
-const options = { threshold: 0.6 };
+let started = false;
 
-const runCounter = (counter) => {
-  const target = +counter.getAttribute('data-target');
-  let count = 0;
-  const increment = target / 200;
-  const updateCounter = () => {
-    if (count < target) {
-      count += increment;
-      counter.innerText = Math.ceil(count);
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.innerText = target + "+";
-    }
-  };
-  updateCounter();
-};
-
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      runCounter(entry.target);
-      obs.unobserve(entry.target);
-    }
+function animateCounters() {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 200;
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target + '+';
+      }
+    };
+    updateCount();
   });
-}, options);
+}
 
-counters.forEach(counter => {
-  observer.observe(counter);
+window.addEventListener('scroll', () => {
+  const section = document.querySelector('.stats');
+  const rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight && !started) {
+    started = true;
+    animateCounters();
+  } else if (rect.top > window.innerHeight) {
+    started = false;
+    counters.forEach(c => c.innerText = '0');
+  }
 });
+
+// ===== Testimonial Slider =====
+let index = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+function showNextTestimonial() {
+  testimonials.forEach((t, i) => t.classList.toggle('active', i === index));
+  index = (index + 1) % testimonials.length;
+}
+setInterval(showNextTestimonial, 4000);
+
+// ===== Dark/Light Mode =====
+document.getElementById('modeToggle').onclick = () => {
+  document.body.classList.toggle('dark');
+};
