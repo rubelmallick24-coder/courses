@@ -130,6 +130,13 @@ body {
 .course-card h3 { margin: 15px 0; color: #0077ff; }
 .course-card ul { list-style: none; margin: 0 20px 20px; text-align: left; }
 .course-card ul li { margin: 5px 0; }
+/* Price styling */
+.course-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00acee;
+  margin: 10px 0;
+}
 .btn-buy {
   display: inline-block;
   margin-bottom: 20px;
@@ -230,3 +237,4 @@ body {
 .dark .header { background: rgba(30, 30, 30, 0.8); }
 .dark .course-card, .dark .mentor-card { background: #161b22; color: #eee; }
 .dark .footer { background: #000; }
+
