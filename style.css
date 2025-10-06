@@ -215,7 +215,7 @@ body {
 }
 
 .testimonial-slider {
-  display: flex;
+  display: none;
   overflow: hidden;
   gap: 30px;
 }
@@ -230,7 +230,7 @@ body {
 }
 
 .testimonial.active {
-  transform: scale(1.05);
+  display: block;
 }
 
 .testimonial img {
@@ -300,6 +300,7 @@ body {
 .dark .header { background: rgba(30, 30, 30, 0.8); }
 .dark .course-card, .dark .mentor-card { background: #161b22; color: #eee; }
 .dark .footer { background: #000; }
+
 
 
 
